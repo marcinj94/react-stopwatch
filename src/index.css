@@ -5,15 +5,15 @@
 }
 
 html {
-  font-family: 'Mina', sans-serif;
+  font-family: 'Roboto Mono', monospace;
 }
 
 button {
-  font-family: 'Mina', sans-serif;
+  font-family: 'Roboto Mono', monospace;
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
   background: url(./img/bg2.jpg) no-repeat center;
   background-size: cover;
 }
