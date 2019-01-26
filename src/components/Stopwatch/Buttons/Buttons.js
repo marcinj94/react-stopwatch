@@ -3,19 +3,21 @@ import './Buttons.css';
 
 const Buttons = (props) => {
 
-    const btnValue = props.btnActive ? "Pauza" : "Start";
+    const btnValue = props.btnActive ? "Pause" : "Start";
 
     return (
         <div className="buttons">
             <button
                 className="startPause"
-                onClick={props.click}
+                onClick={props.clickStartPause}
             >
                 {btnValue}
             </button>
 
             <button>Save</button>
-            <button>Reset</button>
+            <button
+                onClick={props.clickReset}
+            >Reset</button>
             <button>Clear list</button>
         </div>
     );

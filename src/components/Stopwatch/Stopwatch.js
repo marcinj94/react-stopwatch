@@ -7,8 +7,9 @@ const Stopwatch = (props) => {
     return (
         <div className="stopwatch">
             <Buttons
-                click={props.click}
                 btnActive={props.btnActive}
+                clickStartPause={props.clickStartPause}
+                clickReset={props.clickReset}
             />
             <Result
                 miliseconds={props.miliseconds}

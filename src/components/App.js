@@ -32,7 +32,7 @@ class App extends Component {
     }
   }
 
-  handleButtonClick = () => {
+  handleButtonStartPauseClick = () => {
     if (this.state.btnActive) {
       clearInterval(this.intervalIndex);
     } else {
@@ -43,6 +43,16 @@ class App extends Component {
     }));
   }
 
+  handleButtonResetClick = () => {
+    this.setState((prevState) => ({
+      miliseconds: 0,
+      seconds: 0,
+      minutes: 0,
+      btnActive: false,
+    }));
+    clearInterval(this.intervalIndex);
+  }
+
   render() {
     return (
       <>
@@ -51,7 +61,8 @@ class App extends Component {
           miliseconds={this.state.miliseconds}
           seconds={this.state.seconds}
           minutes={this.state.minutes}
-          click={this.handleButtonClick}
+          clickStartPause={this.handleButtonStartPauseClick}
+          clickReset={this.handleButtonResetClick}
           btnActive={this.state.btnActive}
 
         />
