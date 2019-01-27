@@ -12,7 +12,9 @@ const Buttons = (props) => {
     const btnValue = props.btnActive ? <FontAwesomeIcon icon="pause" /> : <FontAwesomeIcon icon="play" />;
 
     return (
+
         <div className="buttons">
+
             <button
                 className="startPause"
                 onClick={props.clickStartPause}
