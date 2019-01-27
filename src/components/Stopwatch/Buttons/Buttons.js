@@ -1,13 +1,18 @@
 import React from 'react';
 import './Buttons.css';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faPause, faDownload, faTrashAlt, faStop } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faPlay, faPause, faDownload, faTrashAlt, faStop);
+
 const Buttons = (props) => {
 
-    const btnValue = props.btnActive ? "Pause" : "Start";
+    const btnValue = props.btnActive ? <FontAwesomeIcon icon="pause" /> : <FontAwesomeIcon icon="play" />;
 
     return (
         <div className="buttons">
-
             <button
                 className="startPause"
                 onClick={props.clickStartPause}
@@ -18,19 +23,19 @@ const Buttons = (props) => {
             <button
                 onClick={props.clickSave}
             >
-                Save
+                <FontAwesomeIcon icon="download" />
             </button>
 
             <button
                 onClick={props.clickReset}
             >
-                Reset
+                <FontAwesomeIcon icon="stop" />
             </button>
 
             <button
                 onClick={props.clickCleanList}
             >
-                Clear list
+                <FontAwesomeIcon icon="trash-alt" />
             </button>
         </div>
     );
