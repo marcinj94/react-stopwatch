@@ -1,0 +1,9 @@
+.resultsTable {
+    text-align: center;
+}
+
+li {
+    font-size: 40px;
+    font-weight: bold;
+    color: orange;
+}

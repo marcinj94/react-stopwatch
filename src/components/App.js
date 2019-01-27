@@ -3,7 +3,6 @@ import './App.css';
 import Header from './Header/Header';
 import Stopwatch from './Stopwatch/Stopwatch';
 
-
 class App extends Component {
 
   state = {
@@ -11,6 +10,8 @@ class App extends Component {
     seconds: 0,
     minutes: 0,
     btnActive: false,
+    savedResults: [
+    ]
   }
 
   runStopwatch = () => {
@@ -53,6 +54,25 @@ class App extends Component {
     clearInterval(this.intervalIndex);
   }
 
+  handleButtonSaveClick = () => {
+    this.setState(prevState => {
+      const savedResults = prevState.savedResults.concat({
+        miliseconds: prevState.miliseconds,
+        seconds: prevState.seconds,
+        minutes: prevState.minutes
+      })
+      return {
+        savedResults
+      }
+    });
+  }
+
+  handleButtonCleanListClick = () => {
+    this.setState((prevState) => ({
+      savedResults: [],
+    }));
+  }
+
   render() {
     return (
       <>
@@ -61,36 +81,13 @@ class App extends Component {
           miliseconds={this.state.miliseconds}
           seconds={this.state.seconds}
           minutes={this.state.minutes}
+          btnActive={this.state.btnActive}
+          savedResults={this.state.savedResults}
           clickStartPause={this.handleButtonStartPauseClick}
           clickReset={this.handleButtonResetClick}
-          btnActive={this.state.btnActive}
-
+          clickSaveResult={this.handleButtonSaveClick}
+          clickCleanList={this.handleButtonCleanListClick}
         />
-
-
-        {/* <header>
-          <h1>React.js Stopwatch</h1>
-        </header>
-
-        <div className="stopwatch">
-          <div className="buttons">
-            <button>Start/Pauza</button>
-            <button>Save</button>
-            <button>Reset</button>
-            <button>Clear list</button>
-          </div>
-
-          <div className="result">
-            <span>00:00:00</span>
-          </div>
-
-          <div className="tableResults">
-            <h2>Saved results:</h2>
-            <ul>
-              <li>00:12:12</li>
-            </ul>
-          </div>
-        </div> */}
       </>
     );
   }

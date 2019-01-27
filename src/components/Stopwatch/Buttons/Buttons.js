@@ -7,6 +7,7 @@ const Buttons = (props) => {
 
     return (
         <div className="buttons">
+
             <button
                 className="startPause"
                 onClick={props.clickStartPause}
@@ -14,11 +15,23 @@ const Buttons = (props) => {
                 {btnValue}
             </button>
 
-            <button>Save</button>
+            <button
+                onClick={props.clickSave}
+            >
+                Save
+            </button>
+
             <button
                 onClick={props.clickReset}
-            >Reset</button>
-            <button>Clear list</button>
+            >
+                Reset
+            </button>
+
+            <button
+                onClick={props.clickCleanList}
+            >
+                Clear list
+            </button>
         </div>
     );
 }
