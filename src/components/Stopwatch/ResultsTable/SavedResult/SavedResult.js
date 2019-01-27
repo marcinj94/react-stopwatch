@@ -2,7 +2,7 @@ import React from 'react';
 
 const SavedResult = (props) => {
 
-    const result = props.savedResults.map(savedResult => {
+    const result = props.savedResults.slice(0).reverse().map(savedResult => {
         const miliseconds = savedResult.miliseconds < 10 ? `0${savedResult.miliseconds}` : savedResult.miliseconds;
         const seconds = savedResult.seconds < 10 ? `0${savedResult.seconds}` : savedResult.seconds;
         const minutes = savedResult.minutes < 10 ? `0${savedResult.minutes}` : savedResult.minutes

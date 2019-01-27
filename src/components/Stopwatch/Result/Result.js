@@ -10,7 +10,7 @@ const Result = (props) => {
     return (
         <div className="result">
             <span className="result__value">
-                {minutes} : {seconds} : {miliseconds}
+                {minutes}:{seconds}:{miliseconds}
             </span>
         </div>
     );
